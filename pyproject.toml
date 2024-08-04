@@ -1,0 +1,25 @@
+[project]
+name = "pythonz-workspace"
+version = "0.1.0"
+description = "Workspace for pythonz"
+authors = [
+    {name = "Yuichiro Smith", email = "yu-ichiro@s3i7h.com"},
+]
+dependencies = []
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+workspace = [
+    "-e pythonz @ file:///${PROJECT_ROOT}/pythonz",
+    "-e pythonz_pipe @ file:///${PROJECT_ROOT}/pythonz_pipe",
+    "-e pythonz_symbol @ file:///${PROJECT_ROOT}/pythonz_symbol",
+]
+dev = [
+    "ruff>=0.5.6",
+    "pytest>=8.3.2",
+]
