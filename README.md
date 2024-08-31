@@ -18,3 +18,4 @@ $ pip install pythonz_pipe
 - pythonz [link](./pythonz/README.md)
 - pythonz_pipe [link](./pythonz_pipe/README.md)
 - pythonz_symbol [link](./pythonz_symbol/README.md)
+- pythonz_enum [line](./pythonz_enum/README.md)

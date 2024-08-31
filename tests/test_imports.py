@@ -20,3 +20,14 @@ class TestImports(unittest.TestCase):
 
         a = symbol("test")
         self.assertTrue(a)
+
+    def test_import_enum(self):
+        try:
+            from pythonz import Enum
+        except ImportError as e:
+            self.fail(f"Import enum failed: {e}")
+
+        class A(Enum):
+            ...
+
+        self.assertTrue(A)

@@ -18,6 +18,7 @@ workspace = [
     "-e pythonz @ file:///${PROJECT_ROOT}/pythonz",
     "-e pythonz_pipe @ file:///${PROJECT_ROOT}/pythonz_pipe",
     "-e pythonz_symbol @ file:///${PROJECT_ROOT}/pythonz_symbol",
+    "-e pythonz_enum @ file:///${PROJECT_ROOT}/pythonz_enum",
 ]
 dev = [
     "ruff>=0.5.6",

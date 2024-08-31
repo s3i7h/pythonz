@@ -6,28 +6,27 @@ pythonz is a package to make your python coding experience more powerful.
 
 ```python
 from functools import partial
-from pythonz import pipe, symbol
+from pythonz import pipe, symbol, Maybe
 
 __empty__ = symbol("empty")
-
-class FindFailed(StopIteration): ...
 
 def find(fn, itr, default=__empty__):
     try:
         return (
                 pipe(itr)
                 / partial(filter, fn)
-                // next
+                / next
+                // Maybe.Just
         )
-    except StopIteration as e:
+    except StopIteration:
         if default is __empty__:
-            raise FindFailed() from e 
-        return default
+            return Maybe.Nothing() 
+        return Maybe.Just(default)
         
 
 # a = pipe(5).and_then(range).then_finally(list) 
 a = pipe(5) / range // list  # [0, 1, 2, 3, 4] 
-b = find(lambda x: x % 2 == 1, a)  # 1
-# c = find(lambda x: x > 4, a)  # FindFailed
+b = find(lambda x: x % 2 == 1, a).unwrap()  # 1
+c = find(lambda x: x > 4, a)  # Maybe.None()
 ```
 
