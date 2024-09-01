@@ -10,19 +10,20 @@ from pythonz import pipe, symbol, Maybe
 
 __empty__ = symbol("empty")
 
+
 def find(fn, itr, default=__empty__):
     try:
         return (
                 pipe(itr)
                 / partial(filter, fn)
                 / next
-                // Maybe.Just
+                // Maybe.just
         )
     except StopIteration:
         if default is __empty__:
-            return Maybe.Nothing() 
-        return Maybe.Just(default)
-        
+            return Maybe.nothing()
+        return Maybe.just(default)
+
 
 # a = pipe(5).and_then(range).then_finally(list) 
 a = pipe(5) / range // list  # [0, 1, 2, 3, 4] 

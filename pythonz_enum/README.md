@@ -7,11 +7,13 @@ implementation of rust-like value holding enums
 ```python
 from pythonz_enum import Maybe
 
+
 def find(predicate, iter_):
     try:
-        return Maybe.Just(next(filter(predicate, iter_)))
+        return Maybe.just(next(filter(predicate, iter_)))
     except StopIteration:
-        return Maybe.Nothing()
-    
+        return Maybe.nothing()
+
+
 find(lambda a: a is not None, [None, 2, 3])  # Maybe.Just(2)
 ```

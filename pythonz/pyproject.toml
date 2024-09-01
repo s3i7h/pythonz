@@ -1,6 +1,6 @@
 [project]
 name = "pythonz"
-version = "0.1.2"
+version = "0.2.0"
 description = "Python but it's Z"
 authors = [
     {name = "Yuichiro Smith", email = "yu-ichiro@s3i7h.com"},
@@ -8,7 +8,7 @@ authors = [
 dependencies = [
     "pythonz_pipe>=0.1.1",
     "pythonz_symbol>=0.1.0",
-    "pythonz_enum>=0.1.0",
+    "pythonz_enum>=0.2.0",
 ]
 requires-python = ">=3.8"
 readme = "README.md"

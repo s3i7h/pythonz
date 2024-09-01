@@ -88,21 +88,21 @@ files = [
 
 [[package]]
 name = "pythonz"
-version = "0.1.2"
+version = "0.2.0"
 requires_python = ">=3.8"
 editable = true
 path = "./pythonz"
 summary = "Python but it's Z"
 groups = ["workspace"]
 dependencies = [
-    "pythonz-enum>=0.1.0",
+    "pythonz-enum>=0.2.0",
     "pythonz-pipe>=0.1.1",
     "pythonz-symbol>=0.1.0",
 ]
 
 [[package]]
 name = "pythonz-enum"
-version = "0.1.0"
+version = "0.2.0"
 requires_python = ">=3.8"
 editable = true
 path = "./pythonz_enum"

@@ -1,6 +1,6 @@
 [project]
 name = "pythonz_enum"
-version = "0.1.0"
+version = "0.2.0"
 description = "enums for pythonz"
 authors = [
     {name = "Yuichiro Smith", email = "yu-ichiro@s3i7h.com"},
