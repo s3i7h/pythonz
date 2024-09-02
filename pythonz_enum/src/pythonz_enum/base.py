@@ -87,10 +87,14 @@ class EnumMeta(type):
             def __repr__(self):
                 _enum_name = name
                 _case_cls = type(self)
-                return f"{_enum_name}.{_case_cls.__name__}({', '.join([
-                    f"{p}={repr(arg)}"
-                    for p, arg in zip(self.__params__, self)
-                ])})"
+                return "{enum}.{case}({params})".format(
+                    enum=_enum_name,
+                    case=_case_cls.__name__,
+                    params=", ".join([
+                        f"{p}={repr(arg)}"
+                        for p, arg in zip(self.__params__, self)
+                    ])
+                )
             case_attrs["__repr__"] = __repr__
 
             case_cls = type(case_name, (cls, tuple), case_attrs)
